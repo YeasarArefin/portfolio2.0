@@ -65,7 +65,68 @@ export const projects: Project[] = [
       "API routes for all major functionalities"
     ],
   },
-
+  {
+    id: "agrofusion",
+    title: "AgroFusion",
+    subtitle: "IoT-Based Agricultural Monitoring & AI Disease Detection System",
+    description: "AgroFusion is an advanced IoT-based agricultural monitoring and management system that enables real-time tracking of critical environmental parameters like humidity, water level, temperature, pH level, and soil health. The platform integrates a powerful AI-driven disease detection model to help farmers identify potential crop diseases early, improving yield and reducing losses. Built with Next.js, TypeScript, and MongoDB, it provides farmers with actionable insights through real-time data analytics, weather predictions using NASA datasets, and expert advisory services.",
+    shortDescription: "IoT-powered agricultural monitoring system with AI disease detection, real-time environmental tracking, and predictive analytics for sustainable farming.",
+    image: "/assets/agrofusion/image_1.png",
+    video: "/assets/agrofusion/video.mp4",
+    gallery: [
+      "/assets/agrofusion/image_1.png",
+      "/assets/agrofusion/image_2.png",
+      "/assets/agrofusion/image_3.png",
+      "/assets/agrofusion/image_4.png",
+      "/assets/agrofusion/image_5.png",
+      "/assets/agrofusion/image_6.png",
+      "/assets/agrofusion/image_7.png",
+    ],
+    liveUrl: "https://agro-fusion.vercel.app/",
+    githubUrl: "https://github.com/YeasarArefin/AgroFusion.git",
+    category: "Full-Stack Web Application",
+    year: "2024",
+    featured: true,
+    technologies: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "React" },
+      { name: "Tailwind CSS" },
+      { name: "MongoDB" },
+      { name: "Google Gemini" },
+      { name: "Firebase" },
+      { name: "Redux Toolkit" },
+      { name: "Chart.js" },
+      { name: "OpenAI API" },
+      { name: "NextAuth.js" },
+      { name: "Radix UI" },
+      { name: "React Hook Form" },
+      { name: "Zod" },
+      { name: "bcryptjs" },
+      { name: "Nodemailer" },
+      { name: "OpenMeteo API" },
+      { name: "Vercel" }
+    ],
+    features: [
+      "Real-time Environmental Monitoring (Humidity, Temperature, Water Level, pH, Soil Health)",
+      "AI-Powered Disease Detection using PyTorch models",
+      "Weather Condition Predictions with NASA datasets",
+      "Disaster Probability Assessment (Flood & Drought)",
+      "Groundwater Level Predictions",
+      "Land Condition Analysis",
+      "UV Index Monitoring",
+      "Soil Activity Assessment",
+      "Expert Advisory System with 10+ Agricultural Specialists",
+      "Real-time Alerts and Notifications",
+      "Interactive Data Visualization with Charts",
+      "User Authentication & Authorization",
+      "Responsive Dashboard Design",
+      "IoT Hardware Integration",
+      "Cloud-based Data Analytics",
+      "Email Verification System",
+      "AI Chat Assistant for Farming Advice"
+    ]
+  }
 ];
 
 // Helper functions
