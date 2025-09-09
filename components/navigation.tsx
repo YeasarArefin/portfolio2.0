@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import info from "@/data/info";
 import { FolderOpen, Github, Home, Linkedin, Mail, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -58,7 +59,7 @@ export function Navigation() {
     { name: "Projects", href: "/projects", icon: FolderOpen },
     { name: "Contact", href: "/#contact", icon: Mail },
   ];
-
+  const { github, linkedin } = info;
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/10">
       <div className="container mx-auto px-4">
@@ -104,16 +105,16 @@ export function Navigation() {
 
           {/* Social Links */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="https://github.com/YeasarArefin" target="_blank" rel="noopener noreferrer">
+            <Link href={github} target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white">
                 <Github className="w-4 h-4" />
               </Button>
-            </a>
-            <a href="https://www.linkedin.com/in/yeasararefin/" target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link href={linkedin} target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white">
                 <Linkedin className="w-4 h-4" />
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -140,8 +141,8 @@ export function Navigation() {
         {/* Mobile Menu with Animations */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen
-              ? 'max-h-96 opacity-100 py-4 border-t border-white/10'
-              : 'max-h-0 opacity-0 py-0 border-t border-transparent'
+            ? 'max-h-96 opacity-100 py-4 border-t border-white/10'
+            : 'max-h-0 opacity-0 py-0 border-t border-transparent'
             }`}
         >
           <div className="flex flex-col gap-4">
@@ -149,8 +150,8 @@ export function Navigation() {
               <div
                 key={item.name}
                 className={`transition-all duration-300 ease-out ${isOpen
-                    ? 'translate-x-0 opacity-100'
-                    : 'translate-x-4 opacity-0'
+                  ? 'translate-x-0 opacity-100'
+                  : 'translate-x-4 opacity-0'
                   }`}
                 style={{
                   transitionDelay: isOpen ? `${index * 100}ms` : '0ms'
@@ -163,8 +164,8 @@ export function Navigation() {
                       toggleMenu();
                     }}
                     className={`flex items-center gap-2 py-3 px-4 transition-all duration-200 cursor-pointer w-full text-left rounded-lg hover:bg-white/5 active:bg-white/10 ${pathname === item.href
-                        ? "text-white font-medium bg-white/10"
-                        : "text-slate-300 hover:text-white"
+                      ? "text-white font-medium bg-white/10"
+                      : "text-slate-300 hover:text-white"
                       }`}
                   >
                     <item.icon
@@ -177,8 +178,8 @@ export function Navigation() {
                   <Link
                     href={item.href}
                     className={`flex items-center gap-2 py-3 px-4 transition-all duration-200 rounded-lg hover:bg-white/5 active:bg-white/10 ${pathname === item.href
-                        ? "text-white font-medium bg-white/10"
-                        : "text-slate-300 hover:text-white"
+                      ? "text-white font-medium bg-white/10"
+                      : "text-slate-300 hover:text-white"
                       }`}
                     onClick={() => toggleMenu()}
                   >
@@ -195,8 +196,8 @@ export function Navigation() {
             {/* Mobile Social Links with Animation */}
             <div
               className={`flex items-center gap-3 pt-2 transition-all duration-300 ease-out ${isOpen
-                  ? 'translate-x-0 opacity-100'
-                  : 'translate-x-4 opacity-0'
+                ? 'translate-x-0 opacity-100'
+                : 'translate-x-4 opacity-0'
                 }`}
               style={{
                 transitionDelay: isOpen ? '300ms' : '0ms'
@@ -204,22 +205,22 @@ export function Navigation() {
             >
               <span className="text-slate-400 text-sm">Follow me:</span>
               <div className="flex gap-2">
-                <a
-                  href="https://github.com/YeasarArefin"
+                <Link
+                  href={github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-200 text-slate-300 hover:text-white"
                 >
                   <Github className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/yeasararefin/"
+                </Link>
+                <Link
+                  href={linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-200 text-slate-300 hover:text-white"
                 >
                   <Linkedin className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

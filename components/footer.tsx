@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
+import info from "@/data/info";
 import { Github, Heart, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
+  const { github, linkedin } = info;
   return (
     <footer className="py-8 sm:py-12 border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6">
@@ -26,7 +28,7 @@ export function Footer() {
 
           {/* Social Links */}
           <div className="flex items-center gap-3 sm:gap-4">
-            <Link href={'https://github.com/YeasarArefin'} target="_blank" rel="noopener noreferrer">
+            <Link href={github} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="sm"
@@ -35,7 +37,7 @@ export function Footer() {
                 <Github className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </Link>
-            <Link href={'https://www.linkedin.com/in/yeasararefin/'} target="_blank" rel="noopener noreferrer">
+            <Link href={linkedin} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="sm"

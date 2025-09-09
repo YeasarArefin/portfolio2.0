@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
+import info from "@/data/info";
 import profile from "@/images/profile.png";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 export function HeroSection() {
+  const { name, description, github, tags, title, resume, linkedin } = info;
   return (
     <section className="pt-16 sm:pt-20 md:pt-24 pb-12 md:pb-16 px-4 sm:px-6 relative overflow-hidden min-h-[100vh] flex items-center bg-[url('/grid.svg')] bg-center bg-repeat">
       {/* Background gradient */}
@@ -18,29 +20,25 @@ export function HeroSection() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-white">Hi, I'm{" "}</span>
                 <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                  Yeasar Arefin
+                  {name}
                 </span>
               </h1>
 
-              <h2 className="text-lg sm:text-xl md:text-2xl text-slate-300 font-medium">Full Stack Developer & Tech Innovator</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl text-slate-300 font-medium">{title}</h2>
 
               {/* Badges - made more mobile friendly */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3 mb-6 md:mb-8">
-                <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm">
-                  🚀 NASA Global Nominee
-                </Badge>
-                <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm">
-                  🏆 Paradigm Finalist
-                </Badge>
-                <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm">
-                  🏴‍☠️ Top 20 Moonshot Pirates
-                </Badge>
+                {
+                  tags.map((tag, index) => (
+                    <Badge key={index} className="bg-white/10 text-white border-white/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm">
+                      {tag}
+                    </Badge>
+                  ))
+                }
               </div>
 
               <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Passionate full-stack developer from Bangladesh with 3+ years of experience. NASA Space App Challenge
-                Global Nominee and Moonshot Pirates Top 20 finalist. I create modern, scalable web applications using
-                React.js, Node.js, and cutting-edge technologies.
+                {description}
               </p>
             </div>
 
@@ -57,30 +55,32 @@ export function HeroSection() {
                 </Button>
               </Link>
 
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-slate-600 text-slate-300 hover:bg-slate-800 bg-transparent w-full sm:w-auto"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
-              </Button>
+              <Link href={resume} target="_blank">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-slate-600 text-slate-300 hover:bg-slate-800 bg-transparent w-full sm:w-auto"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download CV
+                </Button>
+              </Link>
             </div>
 
             {/* Social links - better mobile layout */}
             <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 pt-4 justify-center lg:justify-start">
               <span className="text-slate-400 text-sm">Follow me:</span>
               <div className="flex gap-2 md:gap-3">
-                <a href="https://github.com/YeasarArefin" target="_blank" rel="noopener noreferrer">
+                <Link href={github} target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white p-2">
                     <Github className="w-4 h-4" />
                   </Button>
-                </a>
-                <a href="https://www.linkedin.com/in/yeasararefin/" target="_blank" rel="noopener noreferrer">
+                </Link>
+                <Link href={linkedin} target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white p-2">
                     <Linkedin className="w-4 h-4" />
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
