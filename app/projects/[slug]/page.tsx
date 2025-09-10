@@ -73,8 +73,8 @@ export async function generateMetadata({ params }: ProjectDetailProps): Promise<
             canonical: `https://yeasararefin.vercel.app/projects/${slug}`,
         },
         robots: {
-            index: true,
-            follow: true,
+            index: false, // Temporarily preventing indexing of project detail pages
+            follow: true, // Still allow crawlers to follow links on these pages
         },
     };
 }

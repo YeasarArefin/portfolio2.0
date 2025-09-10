@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { getProjectById } from "@/data/projects";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { skills } from "@/images/skills_logo/skills-logo";
 import {
     ArrowLeft,
@@ -28,6 +29,7 @@ interface ProjectDetailProps {
 export function ProjectDetailPage({ projectId }: ProjectDetailProps) {
     const project = getProjectById(projectId);
     const videoRef = useRef<HTMLVideoElement>(null);
+    const isMobile = useIsMobile();
 
     // Helper function to get skill image by name
     const getSkillImage = (techName: string) => {
@@ -64,18 +66,18 @@ export function ProjectDetailPage({ projectId }: ProjectDetailProps) {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (project?.video && videoRef.current && typeof window !== 'undefined') {
+        if (project?.video && videoRef.current && typeof window !== 'undefined' && !isMobile) {
             const timer = setTimeout(() => {
                 if (videoRef.current) {
                     videoRef.current.play().catch(error => {
                         console.log('Video autoplay failed:', error);
                     });
                 }
-            }, .1000);
+            }, 1000);
 
             return () => clearTimeout(timer);
         }
-    }, [project?.video]);
+    }, [project?.video, isMobile]);
 
     const handleImageClick = (index: number) => {
         setSelectedImageIndex(index);
@@ -225,7 +227,7 @@ export function ProjectDetailPage({ projectId }: ProjectDetailProps) {
                         {/* Main Image/Video */}
                         <div className="mb-12 sm:mb-16 flex justify-center">
                             <div className="relative h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] w-full max-w-4xl rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
-                                {project.video ? (
+                                {project.video && !isMobile ? (
                                     <video
                                         ref={videoRef}
                                         muted

@@ -11,7 +11,7 @@ const achievements = [
     },
     {
         title: "Moonshot Pirates",
-        status: "19th Position",
+        status: "29th Position",
         icon: Target,
         year: "2024",
         description: "Achieved 29th position in the prestigious entrepreneurship program",
