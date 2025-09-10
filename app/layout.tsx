@@ -91,6 +91,7 @@ export const metadata: Metadata = {
   other: {
     "theme-color": "#0f172a",
     "msapplication-TileColor": "#1e293b",
+    "google-site-verification": "Tn1neQL39CwIOeY5k_izCAP-apgG53JRx81IzU2K9HA",
   },
 };
 
