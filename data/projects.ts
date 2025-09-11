@@ -126,6 +126,47 @@ export const projects: Project[] = [
       "Email Verification System",
       "AI Chat Assistant for Farming Advice"
     ]
+  },
+  {
+    id: "food-sense",
+    title: "Food Sense",
+    subtitle: "Meal Ordering Platform",
+    description: "A full-stack meal ordering application with a React frontend and an Express backend. Users can browse meals, view details, place orders, and manage their own orders. Admin flows support adding and managing meals and processing orders. Authentication is handled via Firebase, and the UI is styled with Tailwind.",
+    shortDescription: "Full‑stack React + Express meal ordering app with Firebase auth.",
+    image: "/assets/food_sense/image_1.png",
+    video: "/assets/food_sense/video.mp4",
+    gallery: [
+      "/assets/food_sense/image_1.png",
+      "/assets/food_sense/image_2.png",
+      "/assets/food_sense/image_3.png",
+      "/assets/food_sense/image_4.png",
+      "/assets/food_sense/image_5.png",
+      "/assets/food_sense/image_6.png",
+    ],
+    liveUrl: "https://foodsensee.netlify.app/",
+    githubUrl: "https://github.com/YeasarArefin/food-sense-client",
+    category: "MERN Stack",
+    year: "2020",
+    featured: true,
+    technologies: [
+      { name: "React" },
+      { name: "React Router Dom" },
+      { name: "Tailwind CSS" },
+      { name: "Firebase Authentication" },
+      { name: "Node.js" },
+      { name: "Express" }
+    ],
+    features: [
+      "User authentication with Firebase",
+      "Protected routes via PrivateRoute",
+      "Browse all meals and view meal details",
+      "Place orders and view personal order history",
+      "Admin: add and manage meals",
+      "Admin: manage customer orders",
+      "Dashboard with sidebar navigation",
+      "Responsive UI with Tailwind CSS",
+      "SPA-friendly routing with Netlify redirects"
+    ]
   }
 ];
 
