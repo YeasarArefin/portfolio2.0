@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -92,6 +93,7 @@ export const metadata: Metadata = {
     "theme-color": "#0f172a",
     "msapplication-TileColor": "#1e293b",
     "google-site-verification": "Tn1neQL39CwIOeY5k_izCAP-apgG53JRx81IzU2K9HA",
+    "application-name": "Yeasar Arefin Portfolio",
   },
 };
 
@@ -102,6 +104,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Yeasar Arefin - Full Stack Developer | React.js & Node.js Expert</title>
+        <meta name="application-name" content="Yeasar Arefin Portfolio" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <Navigation />
