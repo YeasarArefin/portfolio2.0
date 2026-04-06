@@ -6,8 +6,8 @@ import nodemailer from 'nodemailer';
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'yeasararefin009@gmail.com', // Your Gmail address
-        pass: process.env.GMAIL_APP_PASSWORD // You'll need to create an App Password in your Gmail account
+        user: 'yeasararefin009@gmail.com',
+        pass: process.env.GMAIL_APP_PASSWORD
     }
 });
 
@@ -20,8 +20,8 @@ export async function sendEmail(formData: FormData) {
 
         // Email content
         const mailOptions = {
-            from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`, // always YOUR Gmail
-            to: 'yeasararefin009@gmail.com', // where you receive it
+            from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+            to: 'yeasararefin009@gmail.com',
             replyTo: email, // visitor’s email goes here
             subject: subject || `New Contact Form Message from ${name}`,
             text: message,

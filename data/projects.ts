@@ -19,6 +19,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  //1
   {
     id: "exclusive-mart",
     title: "Exclusive Mart",
@@ -65,6 +66,7 @@ export const projects: Project[] = [
       "API routes for all major functionalities"
     ],
   },
+  //2
   {
     id: "agrofusion",
     title: "AgroFusion",
@@ -127,6 +129,7 @@ export const projects: Project[] = [
       "AI Chat Assistant for Farming Advice"
     ]
   },
+  //3
   {
     id: "food-sense",
     title: "Food Sense",
@@ -146,8 +149,8 @@ export const projects: Project[] = [
     liveUrl: "https://foodsensee.netlify.app/",
     githubUrl: "https://github.com/YeasarArefin/food-sense-client",
     category: "MERN Stack",
-    year: "2020",
-    featured: true,
+    year: "2021",
+    featured: false,
     technologies: [
       { name: "React" },
       { name: "React Router Dom" },
@@ -166,6 +169,51 @@ export const projects: Project[] = [
       "Dashboard with sidebar navigation",
       "Responsive UI with Tailwind CSS",
       "SPA-friendly routing with Netlify redirects"
+    ]
+  },
+  //4
+  {
+    id: "ghostly",
+    title: "Ghostly",
+    subtitle: "Real-Time Room-Based Chat Application",
+    description: "Ghostly is a real-time, room-based chat application built with Next.js and Socket.io. Users can create or join rooms instantly using a room code — no account or sign-up required. Once inside, they can exchange text messages, share images and files, and send code snippets with full syntax highlighting. The app supports automatic code language detection, making it a great tool for developers who want a quick, shareable environment for collaboration or pair programming sessions.",
+    shortDescription: "A real-time chat app for instant text, image, file, and code sharing — no account needed, just a room code.",
+    image: "/assets/ghostlly/image_1.png",
+    video: "",
+    gallery: [
+      "/assets/ghostlly/image_1.png",
+      "/assets/ghostlly/image_2.png",
+      "/assets/ghostlly/image_3.png",
+      "/assets/ghostlly/image_4.png",
+    ],
+    liveUrl: "https://ghostlly.vercel.app/",
+    githubUrl: "https://github.com/YeasarArefin/ghostly",
+    category: "Full Stack",
+    year: "2021",
+    featured: true,
+    technologies: [
+      { name: "Next.js" },
+      { name: "React" },
+      { name: "Socket.io" },
+      { name: "Tailwind CSS" },
+      { name: "shadcn/ui" },
+      { name: "Axios" },
+      { name: "ImgBB API" },
+      { name: "react-syntax-highlighter" },
+      { name: "Node.js" }
+    ],
+    features: [
+      "Real-time bi-directional messaging powered by Socket.io",
+      "Room-based chatting with a simple room code — no account needed",
+      "Image sharing via ImgBB API integration",
+      "File sharing (PDFs, ZIPs, code files, media, and more)",
+      "Code sharing with syntax highlighting and auto language detection",
+      "Inline code snippet detection with distinct styling",
+      "Typing indicators when other users are composing",
+      "Join/leave system messages in the message stream",
+      "Auto-scroll to the latest message",
+      "Fully responsive design for mobile, tablet, and desktop",
+      "Graceful reconnection handling for slow connections"
     ]
   }
 ];
